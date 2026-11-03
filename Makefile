@@ -1,5 +1,5 @@
 uni: uni.cpp
-	g++ -std=c++11 -O3 -Wall -Wno-unused-function -Wl,--stack,268435456 $^ -o $@
+	g++ -std=c++17 -O3 -Wall -Wno-unused-function -Wl,--stack,268435456 $^ -o $@
 
 unid: uni.cpp
 	clang++ -std=c++11 -O3 -Weverything -Wno-c++98-compat -Wno-c++98-compat-pedantic -Wno-unused-function -DLOG -fsanitize=memory -g $^ -o $@
