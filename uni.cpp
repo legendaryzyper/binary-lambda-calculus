@@ -5,6 +5,8 @@
 #include <memory>
 #include <algorithm>
 #include "IntrusiveRefCntPtr.h"
+#include <io.h>
+#include <fcntl.h>
 
 #ifdef LOG
 #define log(...) fprintf(stderr, ##__VA_ARGS__)
@@ -420,6 +422,9 @@ void load() {
 };
 
 int main(int argc, char **argv) {
+    _setmode(_fileno(stdin), _O_BINARY);
+    _setmode(_fileno(stdout), _O_BINARY);
+    
     U u = U();
 
     // process options
